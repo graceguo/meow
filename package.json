@@ -1,0 +1,18 @@
+{
+  "name": "meow",
+  "version": "1.0.0",
+  "description": "Flickr cat gallery",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "grace guo",
+  "license": "ISC",
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "tiny-lr": "^0.2.1"
+  }
+}
