@@ -6,13 +6,13 @@ gulp.task('express', function() {
   var app = express();
   app.use(require('connect-livereload')({port: 35729}));
   app.use(express.static(__dirname));
-  app.listen(4000, '0.0.0.0');
+  app.listen(3000, '0.0.0.0');
 });
 
 gulp.task('scripts', function() {
   return gulp.src('js/*.js')
     .pipe(concat('meow.js'))
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest('public/javascripts'));
 });
 
 var tinylr;

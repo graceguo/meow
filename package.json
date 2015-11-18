@@ -1,18 +1,21 @@
 {
   "name": "meow",
-  "version": "1.0.0",
-  "description": "Flickr cat gallery",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "npm test"
+    "start": "node ./bin/www"
   },
-  "author": "grace guo",
-  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.10.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.1",
+    "express": "~4.11.0",
+    "jade": "~1.9.0",
+    "morgan": "~1.5.1",
+    "serve-favicon": "~2.2.0",
+    "stylus": "0.42.3"
+  },
   "devDependencies": {
-    "connect-livereload": "^0.5.3",
-    "express": "^4.13.3",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "tiny-lr": "^0.2.1"
+    "request": "^2.65.0"
   }
 }
