@@ -9,6 +9,8 @@ npm install
 ## To start app server
 npm start
 
-## Now play
-1. create a Flickr account.
-2. open application from http://localhost:3000/
+## To play
+1. open application from http://localhost:3000/
+2. login Flickr account
+3. allow Meow app to access your Flickr account and photos
+4. See your photos by album. DONE!
