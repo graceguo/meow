@@ -1,7 +1,7 @@
 # meow
 
 This is a demo web application build on Flickr API.
-It allow you to quick browse photos by album.
+It allow you to quick browse all(private, public) photos by album.
 
 ## To install Meow app
 npm install
