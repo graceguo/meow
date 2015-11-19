@@ -82,6 +82,8 @@ body{
   display: table-cell;
   text-align: center;
   width: 200px;
+  text-decoration: none;
+  color: #333;
 }
 #photosets li br {
   line-height: 50px;

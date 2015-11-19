@@ -3,7 +3,6 @@
  */
 var CONSUMER_KEY = '42f433941f16edbaaecb3ef99064a283';
 var CONSUMER_SECRET = '4eeb928ac5f5995a';
-debugger
 var OAUTH_CALLBACK = window.location.origin;
 var PROXY_URL = OAUTH_CALLBACK + '/proxy';
 
@@ -239,9 +238,10 @@ var Meow = function() {
     photosets.forEach(function(photoset) {
       var setTitle = photoset.title._content;
       var setCount = photoset.photos;
-      var box = document.createElement('div');
+      var box = document.createElement('a');
       box.setAttribute('class', 'cell');
       box.setAttribute('id', photoset.id);
+      box.setAttribute('href', '#');
       box.appendChild(document.createTextNode(setTitle));
       box.appendChild(document.createElement('br'));
       box.appendChild(document.createTextNode(
@@ -301,6 +301,8 @@ var Meow = function() {
       var evtType = evtTarget.getAttribute('class');
 
       if ('cell' === evtType) {
+        evt.preventDefault();
+
         var evtId = evtTarget.getAttribute('id');
         _this.selectedPhotoset = evtId;
         showPhotos();
