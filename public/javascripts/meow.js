@@ -3,7 +3,8 @@
  */
 var CONSUMER_KEY = '42f433941f16edbaaecb3ef99064a283';
 var CONSUMER_SECRET = '4eeb928ac5f5995a';
-var OAUTH_CALLBACK = window.location;
+debugger
+var OAUTH_CALLBACK = window.location.origin;
 var PROXY_URL = OAUTH_CALLBACK + '/proxy';
 
 var REQUEST_TOKEN_ENDPOINT = 'https://www.flickr.com/services/oauth/request_token';
@@ -173,6 +174,9 @@ function buildOauthParameters() {
   return requestParams;
 }
 
+function getCallBackURL() {
+  return window.location.protocol + window.location.host;
+}
 
 var Meow = function() {
   var photosets = [];
