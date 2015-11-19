@@ -322,6 +322,7 @@ var Meow = function() {
 function route() {
   if (getQueryParameter('oauth_verifier')) {
     getAccessToken();
+    history.pushState({}, null, window.location.origin);
   } else {
     requestToken();
   }
