@@ -3,8 +3,8 @@
  */
 var CONSUMER_KEY = '42f433941f16edbaaecb3ef99064a283';
 var CONSUMER_SECRET = '4eeb928ac5f5995a';
-var OAUTH_CALLBACK = 'http://localhost:3000/';
-var PROXY_URL = 'http://localhost:3000/proxy';
+var OAUTH_CALLBACK = window.location;
+var PROXY_URL = OAUTH_CALLBACK + '/proxy';
 
 var REQUEST_TOKEN_ENDPOINT = 'https://www.flickr.com/services/oauth/request_token';
 var ACCESS_TOKEN_ENDPOINT = 'https://www.flickr.com/services/oauth/access_token';
