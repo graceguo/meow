@@ -56,6 +56,10 @@ body{
   background: #00d9ff;
 }
 
+#message-container {
+  font-family: fantasy;
+}
+
 #photosets {
   font-family: fantasy;
   width: 200px;

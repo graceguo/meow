@@ -18,13 +18,13 @@ var jsonFlickrApi = function(rsp) {
     return;
   }
 
-  if (rsp.photosets && rsp.photosets.photoset.length) {
+  if (rsp.photosets && rsp.photosets.photoset) {
     var event = new CustomEvent("data-photosets", {
       detail: {photosets: rsp.photosets.photoset}
     });
     document.dispatchEvent(event);
 
-  } else if (rsp.photoset && rsp.photoset.photo.length) {
+  } else if (rsp.photoset && rsp.photoset.photo) {
     var event = new CustomEvent("data-photos", {
       detail: {photo: rsp.photoset.photo}
     });
@@ -173,10 +173,6 @@ function buildOauthParameters() {
   return requestParams;
 }
 
-function getCallBackURL() {
-  return window.location.protocol + window.location.host;
-}
-
 var Meow = function() {
   var photosets = [];
   var photos = {};
@@ -187,6 +183,7 @@ var Meow = function() {
     lightbox.style.visibility = "visible";
   }
   function closeLightbox() {
+    clearMessage();
     lightbox.style.visibility = "hidden";
   }
 
@@ -205,6 +202,8 @@ var Meow = function() {
 
       if (photosets.length) {
         showPhotosets();
+      } else {
+        showMessage('You don\'t have albums yet!');
       }
     });
     XD.get(SERVICES_URL, requestParams);
@@ -286,6 +285,17 @@ var Meow = function() {
       });
       openLightbox();
     }
+  }
+
+  function showMessage(content) {
+    var container = document.getElementById('message-container');
+    container.appendChild(document.createTextNode(content));
+    openLightbox();
+  }
+
+  function clearMessage(content) {
+    var container = document.getElementById('message-container');
+    container.innerHTML = '';
   }
 
   this.init = function() {
